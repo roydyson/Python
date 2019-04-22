@@ -1,0 +1,17 @@
+spanning-tree mode rapid-pvst
+spanning-tree vlan {{ vlan_number }} priority 8192
+
+
+vlan {{ vlan_number }}
+name {{ vlan_name }}
+
+int vlan {{ vlan_number }}
+description {{ vlan_name }}
+ip address {{ vlan_net }}.2 {{ vlan_mask }}
+standby {{ vlan_number }} priority 110
+standby {{ vlan_number }} ip {{ vlan_net }}.1
+no shut
+
+int g0/3
+switchport trunk encapsulation dot1q
+switchport trunk allowed vlan {{ vlan_number }}
