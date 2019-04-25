@@ -33,7 +33,7 @@ device_dsw1 = {
     'device_type': 'cisco_ios',
     'ip': '172.16.1.13',
     'username': 'cisco',
-    'password': 'cisco',
+    'password': 'cisco123',
 }
 
 device_dsw2 = {
